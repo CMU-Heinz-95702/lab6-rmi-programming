@@ -43,7 +43,6 @@ The first part of this lab takes you through the steps of deploying a
 simple Java RMI application. It is required that you complete this
 introductory exercise before attempting part 2.
 
-For full credit, show your TA or instructor that you have completed part 2.
 
 Note that the use of rmic is now optional. In other words, in the most
 recent versions of Java, you do not need to generate the stub file
@@ -83,6 +82,7 @@ CalculatorClient.java.
 Compile the code on the client and run with the command "java CalculatorClient".
 After experimenting with the client and studying the code, begin the next
 exercise.
+
 :checkered_flag:**Completion of Part 1 is this lab's checkpoint.**
 
 
