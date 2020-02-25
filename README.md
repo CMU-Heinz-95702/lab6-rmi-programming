@@ -19,7 +19,8 @@ the more traditional procedural programming languages.
 
 In both cases, the application developer is free to focus on the business
 application and, to a large extent, is able to ignore all of the details
-that are associated with how messages are passed over the network.
+that are associated with how messages are passed over the network. This
+separation of concerns is important.
 
 In lab work, it is OK to work with others. However, in the end, you
 must have a working solution running on your own laptop. For credit, show
