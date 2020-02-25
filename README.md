@@ -91,6 +91,7 @@ exercise.
 
 4. Write a Java RMI service according to the following specification:
 
+```
     // The class extends UnicastRemoteObject and implements Bumper
 
     // The server calls rebind on the rmiregistry giving the remote
@@ -107,6 +108,7 @@ exercise.
     public BigInteger get() throws RemoteException {
       // a call on get returns the BigInteger held by the service
     }
+```
 
 5. Write a Java RMI client according to the following specification:
 
