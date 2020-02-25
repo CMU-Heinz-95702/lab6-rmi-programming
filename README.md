@@ -36,7 +36,7 @@ use a simple text editor and the command line tooling (javac, java, rmiregistry,
 and rmic).
 
 # Part 1. An Introductory Java RMI example
-========================================
+
 
 The first part of this lab takes you through the steps of deploying a
 simple Java RMI application. It is required that you complete this
@@ -86,7 +86,6 @@ exercise.
 
 
 # Part 2. Java RMI Programming
-============================
 
 
 4. Write a Java RMI service according to the following specification:
