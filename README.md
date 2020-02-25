@@ -1,5 +1,7 @@
 
-95-702 Distributed Systems                              RMI Programming
+# lab6-rmi-programming
+
+# 95-702 Distributed Systems             RMI Programming
 
 In our video lecture on service design, we mainly focused on web services.
 But, you may recall, binary approaches were also discussed. Binary approaches,
@@ -29,13 +31,11 @@ and javac -version produce the same result. If you get a class not found
 error, it is probably wise to visit your environment variables and delete
 your "classpath" variable.
 
-Completion of Part 1 is this lab's checkpoint.
-
 It is suggested that you do not use an IDE for this lab. You are encouraged to
 use a simple text editor and the command line tooling (javac, java, rmiregistry,
 and rmic).
 
-Part 1. An Introductory Java RMI example
+# Part 1. An Introductory Java RMI example
 ========================================
 
 The first part of this lab takes you through the steps of deploying a
@@ -57,52 +57,8 @@ need to have the java bin directory in your path variable.
 1. Create two directories from a DOS or Unix prompt. Name one directory
 'RMILabServer' and the other directory 'RMILabClient'.
 
-2. Within the server directory, save the following three classes.
-
-//************************************************************
-// Calculator.java                Interface for a Calculator
-import java.rmi.*;
-public interface Calculator extends Remote {
-   // this method will be called from remote clients
-   int add (int x, int y) throws RemoteException;
-}
-
-//*************************************************************
-// CalculatorServant.java
-// A Remote object class that implements Calculator.
-import java.rmi.*;
-import java.rmi.server.UnicastRemoteObject;
-public class CalculatorServant extends UnicastRemoteObject implements Calculator {
-       public CalculatorServant() throws RemoteException {
-       }
-       public int add(int x, int y) throws RemoteException {
-            System.out.println("Got request to add " + x + " and " + y);
-
-            return x + y;
-    }
-}
-
-//**************************************************************
-// CalculatorServer.java             Serve remote Calculator
-// Creates a calculator object and gives
-// it a name in the registry.
-import java.rmi.*;
-public class CalculatorServer {
-	public static void main(String args[]){
-          System.out.println("Calculator Server Running");
-          try{
-            // create the servant
-            Calculator c = new CalculatorServant();
-            System.out.println("Created Calculator object");
-            System.out.println("Placing in registry");
-            // publish to registry
-	    Naming.rebind("CoolCalculator", c);
-            System.out.println("CalculatorServant object ready");
-           }catch(Exception e) {
-            System.out.println("CalculatorServer error main " + e.getMessage());
-        }
-    }
-}
+2. Within the server directory, save the following three classes:
+Calculator.java, CalculatorServant.java, and CalculatorServer.java.
 
 Compile all the code with the command "javac *.*".
 
@@ -117,67 +73,19 @@ If you want to run the registry in the background, you may use "rmiregistry &" (
 
 Run the server with the command "java CalculatorServer".
 
-3. In the client directory, enter the following program:
+Note: The rmi registry is providing a naming service. The client provides a
+name and the registry returns a remote object reference.
 
-//*******************************************************
-// CalculatorClient.java
-// This client gets a remote reference from the rmiregistry
-// that is listening on the default port of 1099.
-// It allows the client to quit with a "!".
-// Otherwise, it computes the sum of two integers
-// using the remote calculator.
-
-import java.rmi.*;
-import java.rmi.server.*;
-import java.io.*;
-import java.util.StringTokenizer;
-
-public class CalculatorClient {
-   public static void main(String args[]) throws Exception {
-        BufferedReader in  =
-                     new BufferedReader(
-                         new InputStreamReader(System.in));
-        // connect to the rmiregistry and get a remote reference to the Calculator
-        // object.
-        Calculator c  = (Calculator) Naming.lookup("//localhost/CoolCalculator");
- 	System.out.println("Found calculator. Enter ! to quit");
-   	while(true) {
-           try {
-                 // prompt the user
-                 System.out.print("client>");
-                 // get a line
-                 String line  = in.readLine();
-                 // if a "!" is entered just exit
-                 if(line.equals("!")) System.exit(0);
-                 // if it's not a return get the two integers and call add
-                 // on the remote calculator.
-                 if(!line.equals("")) {
-                  StringTokenizer st = new StringTokenizer(line);
-                  String v1 = st.nextToken();
-                  String v2 = st.nextToken();
-                  int i  = Integer.parseInt(v1);
-                  int j  = Integer.parseInt(v2);
-                  int sum = c.add(i,j);
-                  System.out.println(sum);
-                  }
-               }
-
-	      catch(RemoteException e) {
-                   System.out.println("allComments: " + e.getMessage());
-              }
-	   }
-    }
-}
+3. In the client directory, enter the program
+CalculatorClient.java.
 
 Compile the code on the client and run with the command "java CalculatorClient".
 After experimenting with the client and studying the code, begin the next
 exercise.
+:checkered_flag:**Completion of Part 1 is this lab's checkpoint.**
 
 
-===============================================================================
-
-
-Part 2. Java RMI Programming
+# Part 2. Java RMI Programming
 ============================
 
 
@@ -221,5 +129,5 @@ Part 2. Java RMI Programming
     the server by calling the remote method get(). In addition, display the
     number of seconds that it took to call this service 10,000 times.
 
-Show your TA that you have a working RMI client and server that meets these
-specifications.
+:checkered_flag:**For full credit, show a TA that you have a working RMI client and server that meets these
+specifications.**
