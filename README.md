@@ -60,7 +60,7 @@ need to have the java bin directory in your path variable.
 2. Within the server directory, save the following three classes:
 Calculator.java, CalculatorServant.java, and CalculatorServer.java.
 
-Compile all the code with the command "javac *.*".
+Compile all the code with the command "javac \*.\*".
 
 Run RMIC on the servant class with the command "rmic -v1.2 CalculatorServant".
 
