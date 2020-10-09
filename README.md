@@ -3,9 +3,7 @@
 
 # 95-702 Distributed Systems             RMI Programming
 
-In our video lecture on service design, we mainly focused on web services.
-But, you may recall, binary approaches were also discussed. Binary approaches,
-the video points out, are typically far faster than web service based solutions
+Binary approaches to RPC or RMI are typically far faster than web service based solutions
 using json or xml messages. If a binary message is passed from one machine
 to another, and if the two machines are using the same programming language,
 very little translation work needs to be done. This may result in a much faster
@@ -50,7 +48,7 @@ and copy it to the client. The stub or proxy is available via the
 client side lookup on the registry.
 
 This is a very simple Java RMI application that illustrates the use
-of interfaces and the RMIC tool. Note that it is designed to work
+of interfaces and the rmic tool. Note that it is designed to work
 from the command prompt. If you are working on a Windows PC, you will
 need to have the java bin directory in your path variable.
 
