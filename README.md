@@ -163,10 +163,11 @@ public class CalculatorClient {
 
 9. Within one of the two shells opened on the server side directory, start the rmiregistry with the command "rmiregistry".
 
+Note: The rmi registry is providing a naming service. One client of the registry (the server on the server side) provides a
+name for the remote object. The other client of the registry (on the client side) accesses a remote object reference by providing the registry with the name. Naming services, such as the rmiregistry, are very common - in everyday life as well as in computing. 
+
 10. In the other shell opened on the server side directory, run the server with the command "java CalculatorServer".
 
-Note: The rmi registry is providing a naming service. One client of the registry (the server on the server side) provides a
-name for the remote object. The other client of the registry (on the client side) accesses the remote object reference by providing the registry with the name.
 
 11. Compile the code on the client and run with the command "java CalculatorClient".
 After experimenting with the client and studying the code, begin the next
