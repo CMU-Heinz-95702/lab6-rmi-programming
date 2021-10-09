@@ -175,8 +175,21 @@ Placing in registry
 CalculatorServant object ready
 ```
 
-11. Compile the code on the client and run with the command "java CalculatorClient".
-After experimenting with the client and studying the code, begin the next
+11. Compile the code on the client and run with the command "java CalculatorClient". The interaction appears as follows:
+
+```
+java CalculatorClient
+Found calculator. Enter ! to quit
+client>2 3
+5
+client>1 1
+2
+client>6 7
+13
+client>!
+```
+
+After experimenting with the client and **studying the code**, begin the next
 exercise.
 
 <!--
