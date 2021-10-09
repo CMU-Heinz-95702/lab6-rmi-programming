@@ -196,7 +196,7 @@ exercise.
 :checkered_flag:**Completion of Part 1 is this lab's checkpoint.**
 -->
 
-# Part 2. Java RMI Programming Assignment
+# Part 2. Java RMI Programming Challenge
 
 
 1. Write a Java RMI service according to the following specification:
@@ -207,6 +207,7 @@ exercise.
     // The server calls rebind on the rmiregistry giving the remote
     // object the name "bumper".
 
+    // The remote bump() method behaves as follows:
     public boolean bump() throws RemoteException {
       // A call on bump() adds 1 to a BigInteger held by the service.
       // It then returns true on completion.
