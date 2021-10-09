@@ -3,7 +3,7 @@
 
 # 95-702 Distributed Systems             RMI Programming
 
-Suppose that we have a remote procedure or remote method that we want others to be able call from across a network. Two general approaches exist: Remote Procedure Calls (RPC) and Remote Method Invocation (RMI). In this lab, you will work with Java's RMI.
+Suppose that we have a remote procedure or remote method that we want others to be able call from across a network. We might do that with low level socket programming - but that is a tedious task. We might prefer to work at a higher level. Two general approaches exist: Remote Procedure Calls (RPC) and Remote Method Invocation (RMI). In this lab, you will work with Java's RMI.
 
 Remote Method Invocation is similar in nature to Remote Procedure
 Calls. RMI, as opposed to RPC, is found in the world of object
