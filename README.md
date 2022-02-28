@@ -189,12 +189,10 @@ client>6 7
 client>!
 ```
 
-After experimenting with the client and **studying the code**, begin the next
-exercise.
+After experimenting with the client and **studying the code**,
+show your TA that you have it working.
 
-<!--
 :checkered_flag:**Completion of Part 1 is this lab's checkpoint.**
--->
 
 # Part 2. Java RMI Programming Challenge
 
@@ -242,7 +240,6 @@ exercise.
     the server by calling the remote method get(). In addition, display the
     number of seconds that it took to call this service 10,000 times.
 
-<!--
+
 :checkered_flag:**For full credit, show a TA that you have a working RMI client and server that meets these
 specifications.**
--->
