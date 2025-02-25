@@ -17,6 +17,9 @@ very little translation work needs to be done. This may result in a much faster
 distributed system - there is no need to translate text (XML or JSON) into a binary
 format on the receiving end.
 
+:checkered_flag:**Answer question 1 on the quiz named Lab6_Quiz.**
+
+
 In lab work, it is OK to work with others. However, in the end, you should have a working solution running on your own laptop.
 
 Note: Before working through this lab, make sure all of your firewalls are turned off.
@@ -53,6 +56,9 @@ public interface Calculator extends Remote {
 }
 
 ```
+
+:checkered_flag:**Answer question 2 on the quiz named Lab6_Quiz.**
+
 3. Within the server directory, we want to make the remote object (that implements the calculator interface) available to  clients. Save this as CalculatorServant.java.
 
 ```
@@ -99,6 +105,8 @@ public class CalculatorServer {
 }
 
 ```
+
+:checkered_flag:**Answer question 3 on the quiz named Lab6_Quiz.**
 
 5. Compile all the server side code with the command "javac \*.\*".
 
@@ -189,10 +197,8 @@ client>6 7
 client>!
 ```
 
-After experimenting with the client and **studying the code**,
-show your TA that you have it working.
-
-:checkered_flag:**Completion of Part 1 is this lab's checkpoint.**
+Experiment with the client and **study the code**. After understanding
+the details, go on to Part 2.
 
 # Part 2. Java RMI Programming Challenge
 
@@ -240,6 +246,6 @@ show your TA that you have it working.
     the server by calling the remote method get(). In addition, display the
     number of seconds that it took to call this service 10,000 times.
 
+:checkered_flag:**Answer question 4 on the quiz named Lab6_Quiz.**
 
-:checkered_flag:**For full credit, show a TA that you have a working RMI client and server that meets these
-specifications.**
+:checkered_flag:**Answer question 5 on the quiz named Lab6_Quiz.**
