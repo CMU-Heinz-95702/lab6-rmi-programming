@@ -169,7 +169,7 @@ public class CalculatorClient {
 ```
 8. Open two different shells on the server side directory.
 
-9. Within one of the two shells opened on the server side directory, start the rmiregistry with the command "rmiregistry".
+9. Within one of the two shells opened on the server side directory, start the rmiregistry with the command "rmiregistry". You may ignore the warnings about a deprecated API. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Note: The rmi registry is providing a **naming service**. One client of the registry (the server on the server side) provides a
 name for the remote object. The other client of the registry (on the client side) accesses a **remote object reference** by providing the registry with the name. Naming services, such as the rmiregistry, are very common - in everyday life as well as in computing.
