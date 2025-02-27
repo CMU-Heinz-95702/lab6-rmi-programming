@@ -169,7 +169,7 @@ public class CalculatorClient {
 ```
 8. Open two different shells on the server side directory.
 
-9. Within one of the two shells opened on the server side directory, start the rmiregistry with the command "rmiregistry". You may ignore the warnings about a deprecated API. 
+9. Within one of the two shells opened on the server side directory, start the rmiregistry with the command "rmiregistry". You may ignore the warnings about a deprecated API.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Note: The rmi registry is providing a **naming service**. One client of the registry (the server on the server side) provides a
 name for the remote object. The other client of the registry (on the client side) accesses a **remote object reference** by providing the registry with the name. Naming services, such as the rmiregistry, are very common - in everyday life as well as in computing.
@@ -214,7 +214,7 @@ the details, go on to Part 2.
     // The remote bump() method behaves as follows:
     public boolean bump() throws RemoteException {
       // A call on bump() adds 1 to a BigInteger held by the service.
-      // It then returns true on completion.
+      // It then returns true on completion. True is not used.
       // The BigInteger is changed by the call on bump(). That is,
       // 1 is added to the BigInteger and that value persists until
       // another call on bump occurs.
@@ -227,22 +227,23 @@ the details, go on to Part 2.
 
 2. Write a Java RMI client according to the following specification:
 
-    The main routine performs a lookup on the rmi registry for a remote
+    The client's main routine performs a lookup on the rmi registry for a remote
     object that implements the Bumber interface. The object is called
     "bumper".
 
-    The main routine creates a BigInteger (called ctr) initialized to 0.
-    The main routine creates another BigInteger (called n) initialized to 10000.
-    The main routine loops until the ctr equals n. Each time through the loop,
-    ctr is incremented by 1. Each time through the loop, the remote  method
-    bump is called.
+    The client's main routine creates a BigInteger (called ctr) initialized to 0. This is used as a counter on the client side.
+    The client's main routine creates another BigInteger (called n) initialized to 10000. The counter will increase until it reaches n.
 
-    Before the loop in the main routine begins, set a timer like this:
+    The client's main routine loops until the ctr equals n. Each time through the loop,
+    ctr is incremented by 1. Each time through the loop, the remote  method
+    bump is called. The return value of the bump call is not used.
+
+    Before the loop in the client's main routine begins, set a timer like this:
         long start = System.currentTimeMillis();
     When the loop is finished, find the ending time like this:
         long stop = System.currentTimeMillis();
 
-    At the end of the main routine, display the value of the BigInteger held on
+    At the end of the client's main routine, display the value of the BigInteger held on
     the server by calling the remote method get(). In addition, display the
     number of seconds that it took to call this service 10,000 times.
 
